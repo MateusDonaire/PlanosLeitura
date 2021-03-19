@@ -106,18 +106,19 @@ namespace PlanosLeitura
                     conn.Close();
 
                     MessageBox.Show("Dados Salvos com Sucesso!");
+
+                    int proximoDia = idDia + 1;
+                    string proximoDiaString = Convert.ToString(proximoDia);
+                    txb_Dia.Text = proximoDiaString;
+                    txb_CapituloInicial.Text = "";
+                    txb_CapituloFinal.Text = "";
                 }
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("ERRO: " + ex);
             }
-            finally
-            {
-                idDia++;
-                txb_CapituloInicial.Text = "";
-                txb_CapituloFinal.Text = "";
-            }
+
         }
 
 
