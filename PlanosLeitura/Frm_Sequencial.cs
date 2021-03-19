@@ -36,7 +36,10 @@ namespace PlanosLeitura
         }
         private void txb_Dia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CancelaSeforLetra(e);
+            if (CancelaSeForLetra(e))
+            {
+                txb_Dia.Text = "";
+            }
         }
 
         private void cbx_Livro_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,27 +51,26 @@ namespace PlanosLeitura
         }
         private void txb_CapituloInicial_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CancelaSeforLetra(e);
+            if (CancelaSeForLetra(e))
+            {
+                txb_CapituloInicial.Text = "";
+            }
+            
         }
+
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
             bool podeSalvar = true;
             string capitulo = "";
+            int idDia = 0;
 
             if (txb_Dia.Text.Equals("") || cbx_Livro.Text.Equals("") || txb_CapituloInicial.Equals(""))
             {
-                if(txb_Dia.Text.Length < 3)
-                {
-                    podeSalvar = false;
-                    MessageBox.Show("Dia deve seguir o padrão de 3 digitos numérios, exemplo: 001, 002, 003...365");
-                }
-                else
-                {
-                    podeSalvar = false;
-                    MessageBox.Show("Não é possível salvar com algum campo vazio!");
-                }
+               podeSalvar = false;
+               MessageBox.Show("Não é possível salvar com algum campo vazio!");
             }
+
             if(txb_CapituloFinal.Text != "")
             {
                 capitulo = txb_CapituloInicial.Text + " - " + txb_CapituloFinal.Text;
@@ -78,7 +80,11 @@ namespace PlanosLeitura
                 capitulo = txb_CapituloInicial.Text;
             }
 
-            int idDia = Convert.ToInt32(txb_Dia.Text);
+           if(txb_Dia.Text != "")
+            {
+               idDia = Convert.ToInt32(txb_Dia.Text);
+            }
+
 
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
             string sql = "INSERT INTO tbl_Leitura1(ID_Dia_Leitura, Livro, Capitulo) VALUES (@ID_Dia_Leitura, @Livro, @Capitulo)";
@@ -114,12 +120,15 @@ namespace PlanosLeitura
             }
         }
 
-        public void CancelaSeforLetra(KeyPressEventArgs e) {
+
+        public bool CancelaSeForLetra(KeyPressEventArgs e) {
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 MessageBox.Show("Apenas número é permitido!");
+                return true;
             }
+            return false;
         }
 
     }

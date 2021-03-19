@@ -99,6 +99,7 @@ namespace PlanosLeitura
             this.txb_CapituloFinal.Size = new System.Drawing.Size(26, 23);
             this.txb_CapituloFinal.TabIndex = 3;
             this.txb_CapituloFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_CapituloFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloInicial_KeyPress);
             // 
             // label2
             // 
@@ -176,7 +177,7 @@ namespace PlanosLeitura
             "Cl",
             "1Ts",
             "2Ts",
-            "1Tm\t",
+            "1Tm",
             "2Tm",
             "Tt",
             "Fm",
@@ -209,7 +210,7 @@ namespace PlanosLeitura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 311);
+            this.ClientSize = new System.Drawing.Size(289, 311);
             this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.cbx_Livro);
             this.Controls.Add(this.lbl_Livro);
