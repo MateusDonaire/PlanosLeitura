@@ -62,7 +62,7 @@ namespace PlanosLeitura
             this.btn_Voltar.Location = new System.Drawing.Point(12, 12);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Voltar.TabIndex = 8;
+            this.btn_Voltar.TabIndex = 11;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -72,7 +72,7 @@ namespace PlanosLeitura
             this.btn_Salvar.Location = new System.Drawing.Point(95, 576);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(113, 39);
-            this.btn_Salvar.TabIndex = 15;
+            this.btn_Salvar.TabIndex = 10;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = true;
             this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
@@ -123,7 +123,7 @@ namespace PlanosLeitura
             this.cbx_LivroB.Location = new System.Drawing.Point(123, 305);
             this.cbx_LivroB.Name = "cbx_LivroB";
             this.cbx_LivroB.Size = new System.Drawing.Size(53, 23);
-            this.cbx_LivroB.TabIndex = 11;
+            this.cbx_LivroB.TabIndex = 4;
             // 
             // lbl_Livro
             // 
@@ -149,7 +149,7 @@ namespace PlanosLeitura
             this.txb_CapituloFinalB.Location = new System.Drawing.Point(160, 367);
             this.txb_CapituloFinalB.Name = "txb_CapituloFinalB";
             this.txb_CapituloFinalB.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloFinalB.TabIndex = 14;
+            this.txb_CapituloFinalB.TabIndex = 6;
             this.txb_CapituloFinalB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloFinalB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloFinalB_KeyPress);
             // 
@@ -168,7 +168,7 @@ namespace PlanosLeitura
             this.txb_CapituloInicialB.Location = new System.Drawing.Point(111, 367);
             this.txb_CapituloInicialB.Name = "txb_CapituloInicialB";
             this.txb_CapituloInicialB.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloInicialB.TabIndex = 13;
+            this.txb_CapituloInicialB.TabIndex = 5;
             this.txb_CapituloInicialB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloInicialB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloInicialB_KeyPress);
             // 
@@ -179,7 +179,7 @@ namespace PlanosLeitura
             this.txb_Dia.Location = new System.Drawing.Point(124, 58);
             this.txb_Dia.Name = "txb_Dia";
             this.txb_Dia.Size = new System.Drawing.Size(53, 25);
-            this.txb_Dia.TabIndex = 9;
+            this.txb_Dia.TabIndex = 0;
             this.txb_Dia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_Dia.TextChanged += new System.EventHandler(this.txb_Dia_TextChanged);
             this.txb_Dia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_Dia_KeyPress);
@@ -239,7 +239,7 @@ namespace PlanosLeitura
             this.cbx_LivroA.Location = new System.Drawing.Point(123, 157);
             this.cbx_LivroA.Name = "cbx_LivroA";
             this.cbx_LivroA.Size = new System.Drawing.Size(53, 23);
-            this.cbx_LivroA.TabIndex = 18;
+            this.cbx_LivroA.TabIndex = 1;
             // 
             // label3
             // 
@@ -265,7 +265,7 @@ namespace PlanosLeitura
             this.txb_CapituloFinalA.Location = new System.Drawing.Point(160, 219);
             this.txb_CapituloFinalA.Name = "txb_CapituloFinalA";
             this.txb_CapituloFinalA.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloFinalA.TabIndex = 21;
+            this.txb_CapituloFinalA.TabIndex = 3;
             this.txb_CapituloFinalA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloFinalA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloFinalA_KeyPress);
             // 
@@ -284,7 +284,7 @@ namespace PlanosLeitura
             this.txb_CapituloInicialA.Location = new System.Drawing.Point(111, 219);
             this.txb_CapituloInicialA.Name = "txb_CapituloInicialA";
             this.txb_CapituloInicialA.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloInicialA.TabIndex = 20;
+            this.txb_CapituloInicialA.TabIndex = 2;
             this.txb_CapituloInicialA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloInicialA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloInicialA_KeyPress);
             // 
@@ -322,7 +322,7 @@ namespace PlanosLeitura
             this.cbx_LivroC.Location = new System.Drawing.Point(123, 458);
             this.cbx_LivroC.Name = "cbx_LivroC";
             this.cbx_LivroC.Size = new System.Drawing.Size(53, 23);
-            this.cbx_LivroC.TabIndex = 24;
+            this.cbx_LivroC.TabIndex = 7;
             // 
             // label6
             // 
@@ -348,7 +348,7 @@ namespace PlanosLeitura
             this.txb_CapituloFinalC.Location = new System.Drawing.Point(160, 520);
             this.txb_CapituloFinalC.Name = "txb_CapituloFinalC";
             this.txb_CapituloFinalC.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloFinalC.TabIndex = 27;
+            this.txb_CapituloFinalC.TabIndex = 9;
             this.txb_CapituloFinalC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloFinalC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloFinalC_KeyPress);
             // 
@@ -367,7 +367,7 @@ namespace PlanosLeitura
             this.txb_CapituloInicialC.Location = new System.Drawing.Point(111, 520);
             this.txb_CapituloInicialC.Name = "txb_CapituloInicialC";
             this.txb_CapituloInicialC.Size = new System.Drawing.Size(26, 23);
-            this.txb_CapituloInicialC.TabIndex = 26;
+            this.txb_CapituloInicialC.TabIndex = 8;
             this.txb_CapituloInicialC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txb_CapituloInicialC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloInicialC_KeyPress);
             // 

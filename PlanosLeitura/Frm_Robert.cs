@@ -88,6 +88,91 @@ namespace PlanosLeitura
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+            bool podeSalvar = true;
+            string capituloA = "", capituloB = "", capituloC = "";
+            int idDia = 0;
+
+            if (txb_Dia.Text.Equals("") || cbx_LivroA.Text.Equals("") || txb_CapituloInicialA.Equals("") || cbx_LivroB.Text.Equals("") || txb_CapituloInicialB.Equals("")
+                || cbx_LivroC.Text.Equals("") || txb_CapituloInicialC.Equals(""))
+            {
+                podeSalvar = false;
+                MessageBox.Show("Não é possível salvar com algum campo vazio!");
+            }
+
+            if (txb_CapituloFinalA.Text != "")
+            {
+                capituloA = txb_CapituloInicialA.Text + " - " + txb_CapituloFinalA.Text;
+            }
+            else
+            {
+                capituloA = txb_CapituloInicialA.Text;
+            }
+
+            if (txb_CapituloFinalB.Text != "")
+            {
+                capituloB = txb_CapituloInicialB.Text + " - " + txb_CapituloFinalB.Text;
+            }
+            else
+            {
+                capituloB = txb_CapituloInicialB.Text;
+            }
+
+            if (txb_CapituloFinalC.Text != "")
+            {
+                capituloC = txb_CapituloInicialC.Text + " - " + txb_CapituloFinalC.Text;
+            }
+            else
+            {
+                capituloC = txb_CapituloInicialC.Text;
+            }
+
+
+            if (txb_Dia.Text != "")
+            {
+                idDia = Convert.ToInt32(txb_Dia.Text);
+            }
+
+
+            SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
+            string sql = "INSERT INTO tbl_Leitura2(ID_Dia_Leitura, LivroA, CapituloA, LivroB, CapituloB, LivroC, CapituloC) VALUES (@ID_Dia_Leitura, @LivroA, @CapituloA, @LivroB, @CapituloB, @LivroC, @CapituloC)";
+
+            try
+            {
+                if (podeSalvar)
+                {
+                    SqlCommand c = new SqlCommand(sql, conn);
+
+                    c.Parameters.Add(new SqlParameter("@ID_Dia_Leitura", idDia));
+                    c.Parameters.Add(new SqlParameter("@LivroA", cbx_LivroA.Text));
+                    c.Parameters.Add(new SqlParameter("@CapituloA", capituloA));
+                    c.Parameters.Add(new SqlParameter("@LivroB", cbx_LivroB.Text));
+                    c.Parameters.Add(new SqlParameter("@CapituloB", capituloB));
+                    c.Parameters.Add(new SqlParameter("@LivroC", cbx_LivroC.Text));
+                    c.Parameters.Add(new SqlParameter("@CapituloC", capituloC));
+
+                    conn.Open();
+
+                    c.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    MessageBox.Show("Dados Salvos com Sucesso!");
+
+                    int proximoDia = idDia + 1;
+                    string proximoDiaString = Convert.ToString(proximoDia);
+                    txb_Dia.Text = proximoDiaString;
+                    txb_CapituloInicialA.Text = "";
+                    txb_CapituloFinalA.Text = "";
+                    txb_CapituloInicialB.Text = "";
+                    txb_CapituloFinalB.Text = "";
+                    txb_CapituloInicialC.Text = "";
+                    txb_CapituloFinalC.Text = "";
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("ERRO: " + ex);
+            }
 
         }
         public bool CancelaSeForLetra(KeyPressEventArgs e)
@@ -100,31 +185,6 @@ namespace PlanosLeitura
             }
             return false;
         }
-
-        public bool TemDiaRegistrado(int idDia)
-        {
-            SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
-            string sql = "SELECT ID_Dia_Leitura FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia";
-
-            SqlCommand c = new SqlCommand(sql, conn);
-
-            c.Parameters.Add(new SqlParameter("@idDia", idDia));
-
-            conn.Open();
-
-            var resultadoSelect = c.ExecuteNonQuery();
-
-            if (resultadoSelect != 0)
-            {
-                return true;
-            }
-
-            conn.Close();
-
-            return false;
-        }
-
-
 
     }
 }
