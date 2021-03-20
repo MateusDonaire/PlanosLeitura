@@ -85,6 +85,11 @@ namespace PlanosLeitura
                idDia = Convert.ToInt32(txb_Dia.Text);
             }
 
+            if (TemDiaRegistrado(idDia))
+            {
+                podeSalvar = false;
+                MessageBox.Show("Dia " + idDia + " já está cadastrado na Base!");
+            }
 
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
             string sql = "INSERT INTO tbl_Leitura1(ID_Dia_Leitura, Livro, Capitulo) VALUES (@ID_Dia_Leitura, @Livro, @Capitulo)";
@@ -121,7 +126,6 @@ namespace PlanosLeitura
 
         }
 
-
         public bool CancelaSeForLetra(KeyPressEventArgs e) {
             if (!char.IsDigit(e.KeyChar))
             {
@@ -129,6 +133,29 @@ namespace PlanosLeitura
                 MessageBox.Show("Apenas número é permitido!");
                 return true;
             }
+            return false;
+        }
+
+        public bool TemDiaRegistrado(int idDia)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
+            string sql = "SELECT ID_Dia_Leitura FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia";
+
+            SqlCommand c = new SqlCommand(sql, conn);
+
+            c.Parameters.Add(new SqlParameter("@idDia", idDia));
+
+            conn.Open();
+
+            var resultadoSelect = c.ExecuteNonQuery();
+
+            if(resultadoSelect != 0)
+            {
+                return true;
+            }
+
+            conn.Close();
+
             return false;
         }
 
