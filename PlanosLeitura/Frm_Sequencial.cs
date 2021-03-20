@@ -54,10 +54,15 @@ namespace PlanosLeitura
             if (CancelaSeForLetra(e))
             {
                 txb_CapituloInicial.Text = "";
-            }
-            
+            }    
         }
-
+        private void txb_CapituloFinal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (CancelaSeForLetra(e))
+            {
+                txb_CapituloFinal.Text = "";
+            }
+        }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
@@ -159,5 +164,6 @@ namespace PlanosLeitura
             return false;
         }
 
+   
     }
 }

@@ -52,6 +52,7 @@ namespace PlanosLeitura
             this.btn_Robert.TabIndex = 1;
             this.btn_Robert.Text = "Robert Roberts";
             this.btn_Robert.UseVisualStyleBackColor = true;
+            this.btn_Robert.Click += new System.EventHandler(this.btn_Robert_Click);
             // 
             // lbl_Principal
             // 

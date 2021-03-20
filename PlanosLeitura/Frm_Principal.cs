@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PlanosLeitura
@@ -20,6 +15,13 @@ namespace PlanosLeitura
             this.Hide();
             Frm_Sequencial frm_Sequencial = new Frm_Sequencial();
             frm_Sequencial.Show();
+        }
+
+        private void btn_Robert_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_Robert frm_Robert = new Frm_Robert();
+            frm_Robert.Show();
         }
     }
 }

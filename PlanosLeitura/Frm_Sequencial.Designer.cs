@@ -99,7 +99,7 @@ namespace PlanosLeitura
             this.txb_CapituloFinal.Size = new System.Drawing.Size(26, 23);
             this.txb_CapituloFinal.TabIndex = 3;
             this.txb_CapituloFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txb_CapituloFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloInicial_KeyPress);
+            this.txb_CapituloFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_CapituloFinal_KeyPress);
             // 
             // label2
             // 
@@ -222,7 +222,7 @@ namespace PlanosLeitura
             this.Controls.Add(this.lbl_Dia);
             this.Controls.Add(this.btn_Voltar);
             this.Name = "Frm_Sequencial";
-            this.Text = "Plano de Leitura - Sequencial";
+            this.Text = "SEQUENCIAL";
             this.ResumeLayout(false);
             this.PerformLayout();
 
