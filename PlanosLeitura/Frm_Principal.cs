@@ -13,8 +13,9 @@ namespace PlanosLeitura
         private void btn_Sequencial_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Sequencial frm_Sequencial = new Frm_Sequencial();
-            frm_Sequencial.Show();
+            Frm_ConsultarOuInerir_Sequencial consultarOuInerir_Sequencial = new Frm_ConsultarOuInerir_Sequencial();
+            consultarOuInerir_Sequencial.Show();
+
         }
 
         private void btn_Robert_Click(object sender, EventArgs e)
