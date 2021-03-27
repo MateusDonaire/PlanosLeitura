@@ -21,8 +21,8 @@ namespace PlanosLeitura
         private void btn_Robert_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Robert frm_Robert = new Frm_Robert();
-            frm_Robert.Show();
+            Frm_ConsultarOuInserir_Robert consultarOuInserir_Robert = new Frm_ConsultarOuInserir_Robert();
+            consultarOuInserir_Robert.Show();
         }
     }
 }

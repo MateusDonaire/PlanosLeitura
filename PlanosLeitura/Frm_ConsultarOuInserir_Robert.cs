@@ -8,17 +8,18 @@ using System.Windows.Forms;
 
 namespace PlanosLeitura
 {
-    public partial class Frm_ConsultarOuInerir_Sequencial : Form
+    public partial class Frm_ConsultarOuInserir_Robert : Form
     {
-        public Frm_ConsultarOuInerir_Sequencial()
-        {            InitializeComponent();
+        public Frm_ConsultarOuInserir_Robert()
+        {
+            InitializeComponent();
         }
 
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Sequencial sequencial = new Frm_Sequencial();
-            sequencial.Show();
+            Frm_Robert robert = new Frm_Robert();
+            robert.Show();
         }
     }
 }
