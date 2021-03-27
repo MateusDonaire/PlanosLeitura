@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PlanosLeitura
@@ -26,13 +21,13 @@ namespace PlanosLeitura
 
         private void txb_Dia_TextChanged(object sender, EventArgs e)
         {
-          
-            if(txb_Dia.Text.Length > 3)
+
+            if (txb_Dia.Text.Length > 3)
             {
                 txb_Dia.Text = "";
-                MessageBox.Show("Valor deve ser entre 0 e 365");
+                MessageBox.Show("Valor não pode ter mais que 3 digitos");
             }
-            
+
         }
         private void txb_Dia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -44,7 +39,7 @@ namespace PlanosLeitura
 
         private void cbx_Livro_SelectedIndexChanged(object sender, EventArgs e)
         {
-           if(cbx_Livro.Text == "---")
+            if (cbx_Livro.Text == "---")
             {
                 MessageBox.Show("Selecione um Livro válido");
             }
@@ -54,7 +49,7 @@ namespace PlanosLeitura
             if (CancelaSeForLetra(e))
             {
                 txb_CapituloInicial.Text = "";
-            }    
+            }
         }
         private void txb_CapituloFinal_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -72,11 +67,12 @@ namespace PlanosLeitura
 
             if (txb_Dia.Text.Equals("") || cbx_Livro.Text.Equals("") || txb_CapituloInicial.Equals(""))
             {
-               podeSalvar = false;
-               MessageBox.Show("Não é possível salvar com algum campo vazio!");
+                podeSalvar = false;
+                MessageBox.Show("Não é possível salvar com algum campo vazio!");
             }
 
-            if(txb_CapituloFinal.Text != "")
+
+            if (txb_CapituloFinal.Text != "")
             {
                 capitulo = txb_CapituloInicial.Text + " - " + txb_CapituloFinal.Text;
             }
@@ -85,9 +81,14 @@ namespace PlanosLeitura
                 capitulo = txb_CapituloInicial.Text;
             }
 
-           if(txb_Dia.Text != "")
+            if (txb_Dia.Text != "")
             {
-               idDia = Convert.ToInt32(txb_Dia.Text);
+                idDia = Convert.ToInt32(txb_Dia.Text);
+                if (idDia > 365)
+                {
+                    podeSalvar = false;
+                    MessageBox.Show("Número máximo de dias é 365");
+                }
             }
 
             if (TemDiaRegistrado(idDia))
@@ -131,7 +132,8 @@ namespace PlanosLeitura
 
         }
 
-        public bool CancelaSeForLetra(KeyPressEventArgs e) {
+        public bool CancelaSeForLetra(KeyPressEventArgs e)
+        {
             if (!char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -144,26 +146,77 @@ namespace PlanosLeitura
         public bool TemDiaRegistrado(int idDia)
         {
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
-            string sql = "SELECT ID_Dia_Leitura FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia";
+            SqlDataReader reader = null;
 
-            SqlCommand c = new SqlCommand(sql, conn);
-
-            c.Parameters.Add(new SqlParameter("@idDia", idDia));
-
-            conn.Open();
-
-            var resultadoSelect = c.ExecuteNonQuery();
-
-            if(resultadoSelect != 0)
+            try
             {
-                return true;
+                SqlCommand cmd = new SqlCommand("SELECT ID_Dia_Leitura FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                cmd.Parameters.Add(new SqlParameter("@idDia", idDia));
+
+                conn.Open();
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return true;
+                }
+              
+
+                conn.Close();
+                reader.Close();
+
+                return false;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("ERRO: " + ex);
+                return false;
             }
 
-            conn.Close();
-
-            return false;
         }
 
-   
+        private void btn_UltimoCadastrado_Click(object sender, EventArgs e)
+        {
+
+            SqlDataReader reader = null;
+            SqlConnection conn = null;
+
+            try
+            {
+                conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Integrated Security=True");
+
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM tbl_Leitura1 ORDER BY ID_Dia_Leitura DESC", conn);
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    MessageBox.Show(" Dia: " + reader["ID_Dia_Leitura"].ToString() + "\r\n Livro: " + reader["Livro"].ToString() + "\r\n Capítulo: " + reader["Capitulo"].ToString());
+                }
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("ERRO: " + ex);
+
+            }
+
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

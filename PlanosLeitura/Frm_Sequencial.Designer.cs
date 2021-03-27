@@ -39,6 +39,7 @@ namespace PlanosLeitura
             this.lbl_Livro = new System.Windows.Forms.Label();
             this.cbx_Livro = new System.Windows.Forms.ComboBox();
             this.btn_Salvar = new System.Windows.Forms.Button();
+            this.btn_UltimoCadastrado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -54,7 +55,7 @@ namespace PlanosLeitura
             // lbl_Dia
             // 
             this.lbl_Dia.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Dia.Location = new System.Drawing.Point(65, 60);
+            this.lbl_Dia.Location = new System.Drawing.Point(65, 83);
             this.lbl_Dia.Name = "lbl_Dia";
             this.lbl_Dia.Size = new System.Drawing.Size(100, 23);
             this.lbl_Dia.TabIndex = 0;
@@ -64,7 +65,7 @@ namespace PlanosLeitura
             // 
             this.txb_Dia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txb_Dia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txb_Dia.Location = new System.Drawing.Point(118, 60);
+            this.txb_Dia.Location = new System.Drawing.Point(118, 83);
             this.txb_Dia.Name = "txb_Dia";
             this.txb_Dia.Size = new System.Drawing.Size(53, 25);
             this.txb_Dia.TabIndex = 0;
@@ -75,7 +76,7 @@ namespace PlanosLeitura
             // txb_CapituloInicial
             // 
             this.txb_CapituloInicial.ForeColor = System.Drawing.Color.Black;
-            this.txb_CapituloInicial.Location = new System.Drawing.Point(118, 163);
+            this.txb_CapituloInicial.Location = new System.Drawing.Point(118, 186);
             this.txb_CapituloInicial.Name = "txb_CapituloInicial";
             this.txb_CapituloInicial.Size = new System.Drawing.Size(26, 23);
             this.txb_CapituloInicial.TabIndex = 2;
@@ -85,7 +86,7 @@ namespace PlanosLeitura
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 155);
+            this.label1.Location = new System.Drawing.Point(12, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 38);
             this.label1.TabIndex = 2;
@@ -94,7 +95,7 @@ namespace PlanosLeitura
             // txb_CapituloFinal
             // 
             this.txb_CapituloFinal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txb_CapituloFinal.Location = new System.Drawing.Point(167, 163);
+            this.txb_CapituloFinal.Location = new System.Drawing.Point(167, 186);
             this.txb_CapituloFinal.Name = "txb_CapituloFinal";
             this.txb_CapituloFinal.Size = new System.Drawing.Size(26, 23);
             this.txb_CapituloFinal.TabIndex = 3;
@@ -104,7 +105,7 @@ namespace PlanosLeitura
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(147, 157);
+            this.label2.Location = new System.Drawing.Point(147, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 38);
             this.label2.TabIndex = 4;
@@ -113,7 +114,7 @@ namespace PlanosLeitura
             // lbl_Livro
             // 
             this.lbl_Livro.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Livro.Location = new System.Drawing.Point(51, 104);
+            this.lbl_Livro.Location = new System.Drawing.Point(51, 127);
             this.lbl_Livro.Name = "lbl_Livro";
             this.lbl_Livro.Size = new System.Drawing.Size(100, 38);
             this.lbl_Livro.TabIndex = 5;
@@ -190,7 +191,7 @@ namespace PlanosLeitura
             "3Jo",
             "Jd",
             "Ap"});
-            this.cbx_Livro.Location = new System.Drawing.Point(118, 112);
+            this.cbx_Livro.Location = new System.Drawing.Point(118, 135);
             this.cbx_Livro.Name = "cbx_Livro";
             this.cbx_Livro.Size = new System.Drawing.Size(53, 23);
             this.cbx_Livro.TabIndex = 1;
@@ -206,11 +207,22 @@ namespace PlanosLeitura
             this.btn_Salvar.UseVisualStyleBackColor = true;
             this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
+            // btn_UltimoCadastrado
+            // 
+            this.btn_UltimoCadastrado.Location = new System.Drawing.Point(147, 12);
+            this.btn_UltimoCadastrado.Name = "btn_UltimoCadastrado";
+            this.btn_UltimoCadastrado.Size = new System.Drawing.Size(119, 23);
+            this.btn_UltimoCadastrado.TabIndex = 8;
+            this.btn_UltimoCadastrado.Text = "Ultimo Cadastrado";
+            this.btn_UltimoCadastrado.UseVisualStyleBackColor = true;
+            this.btn_UltimoCadastrado.Click += new System.EventHandler(this.btn_UltimoCadastrado_Click);
+            // 
             // Frm_Sequencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 311);
+            this.ClientSize = new System.Drawing.Size(278, 311);
+            this.Controls.Add(this.btn_UltimoCadastrado);
             this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.cbx_Livro);
             this.Controls.Add(this.lbl_Livro);
@@ -240,5 +252,6 @@ namespace PlanosLeitura
         private System.Windows.Forms.Label lbl_Livro;
         private System.Windows.Forms.ComboBox cbx_Livro;
         private System.Windows.Forms.Button btn_Salvar;
+        private System.Windows.Forms.Button btn_UltimoCadastrado;
     }
 }
