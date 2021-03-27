@@ -127,11 +127,11 @@ namespace PlanosLeitura
                 idDia = Convert.ToInt32(txb_Dia.Text);
             }
 
-            //if (TemDiaRegistrado(idDia))
-            //{
-            //    podeSalvar = false;
-            //    MessageBox.Show("Dia " + idDia + " já está cadastrado na Base!");
-            //}
+            if (TemDiaRegistrado(idDia))
+            {
+               podeSalvar = false;
+               MessageBox.Show("Dia " + idDia + " já está cadastrado na Base!");
+            }
 
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
             string sql = "INSERT INTO tbl_Leitura2(ID_Dia_Leitura, LivroA, CapituloA, LivroB, CapituloB, LivroC, CapituloC) VALUES (@ID_Dia_Leitura, @LivroA, @CapituloA, @LivroB, @CapituloB, @LivroC, @CapituloC)";
@@ -189,24 +189,80 @@ namespace PlanosLeitura
         public bool TemDiaRegistrado(int idDia)
         {
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
-            string sql = "SELECT ID_Dia_Leitura FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia";
+            SqlDataReader reader = null;
 
-            SqlCommand c = new SqlCommand(sql, conn);
-
-            c.Parameters.Add(new SqlParameter("@idDia", idDia));
-
-            conn.Open();
-
-            var resultadoSelect = c.ExecuteNonQuery();
-
-            if (resultadoSelect != 0)
+            try
             {
-                return true;
+                SqlCommand cmd = new SqlCommand("SELECT ID_Dia_Leitura FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                cmd.Parameters.Add(new SqlParameter("@idDia", idDia));
+
+                conn.Open();
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return true;
+                }
+
+                conn.Close();
+                reader.Close();
+
+                return false;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("ERRO: " + ex);
+                return false;
             }
 
-            conn.Close();
+        }
+    
 
-            return false;
+        private void btn_UltimoCadastrado_Click(object sender, EventArgs e)
+        {
+
+            SqlDataReader reader = null;
+            SqlConnection conn = null;
+
+            try
+            {
+                conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Integrated Security=True");
+
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 * FROM tbl_Leitura2 ORDER BY ID_Dia_Leitura DESC", conn);
+
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    MessageBox.Show(" Dia: " + reader["ID_Dia_Leitura"].ToString() + "\r\n" + "\r\n Livro: " + reader["LivroA"].ToString() + "\r\n Capítulo: " + reader["CapituloA"].ToString() + "\r\n" +
+                                                                                              "\r\n Livro: " + reader["LivroB"].ToString() + "\r\n Capítulo: " + reader["CapituloB"].ToString() + "\r\n" +
+                                                                                              "\r\n Livro: " + reader["LivroC"].ToString() + "\r\n Capítulo: " + reader["CapituloC"].ToString());
+                }
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("ERRO: " + ex);
+
+            }
+
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }
+

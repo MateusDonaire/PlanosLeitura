@@ -55,6 +55,7 @@ namespace PlanosLeitura
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btn_UltimoCadastrado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Voltar
@@ -407,11 +408,22 @@ namespace PlanosLeitura
             this.label12.TabIndex = 33;
             this.label12.Text = "_________________________________________________________________";
             // 
+            // btn_UltimoCadastrado
+            // 
+            this.btn_UltimoCadastrado.Location = new System.Drawing.Point(160, 12);
+            this.btn_UltimoCadastrado.Name = "btn_UltimoCadastrado";
+            this.btn_UltimoCadastrado.Size = new System.Drawing.Size(119, 23);
+            this.btn_UltimoCadastrado.TabIndex = 34;
+            this.btn_UltimoCadastrado.Text = "Ultimo Cadastrado";
+            this.btn_UltimoCadastrado.UseVisualStyleBackColor = true;
+            this.btn_UltimoCadastrado.Click += new System.EventHandler(this.btn_UltimoCadastrado_Click);
+            // 
             // Frm_Robert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(289, 627);
+            this.Controls.Add(this.btn_UltimoCadastrado);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -473,5 +485,6 @@ namespace PlanosLeitura
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_UltimoCadastrado;
     }
 }

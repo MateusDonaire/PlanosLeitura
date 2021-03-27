@@ -162,7 +162,6 @@ namespace PlanosLeitura
                 {
                     return true;
                 }
-              
 
                 conn.Close();
                 reader.Close();
