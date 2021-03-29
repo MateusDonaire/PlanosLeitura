@@ -14,8 +14,8 @@ namespace PlanosLeitura
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Principal frm_Principal = new Frm_Principal();
-            frm_Principal.Show();
+            Frm_ConsultarOuInerir_Sequencial consultarOuInerir_Sequencial = new Frm_ConsultarOuInerir_Sequencial();
+            consultarOuInerir_Sequencial.Show();
         }
 
 

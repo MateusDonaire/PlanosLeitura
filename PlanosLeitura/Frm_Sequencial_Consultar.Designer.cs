@@ -58,6 +58,7 @@ namespace PlanosLeitura
             this.txt_Dia.Name = "txt_Dia";
             this.txt_Dia.Size = new System.Drawing.Size(65, 23);
             this.txt_Dia.TabIndex = 1;
+            this.txt_Dia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dia_KeyPress);
             // 
             // btn_Voltar
             // 
@@ -67,6 +68,7 @@ namespace PlanosLeitura
             this.btn_Voltar.TabIndex = 2;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // btn_Pesquisar
             // 

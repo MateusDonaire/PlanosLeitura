@@ -28,5 +28,12 @@ namespace PlanosLeitura
             Frm_Sequencial_Consultar sequencial_Consultar = new Frm_Sequencial_Consultar();
             sequencial_Consultar.Show();
         }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_Principal principal = new Frm_Principal();
+            principal.Show();
+        }
     }
 }
