@@ -58,7 +58,7 @@ namespace PlanosLeitura
             // 
             this.lbl_Principal.AutoSize = true;
             this.lbl_Principal.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Principal.Location = new System.Drawing.Point(18, 49);
+            this.lbl_Principal.Location = new System.Drawing.Point(18, 39);
             this.lbl_Principal.Name = "lbl_Principal";
             this.lbl_Principal.Size = new System.Drawing.Size(257, 23);
             this.lbl_Principal.TabIndex = 2;
@@ -68,11 +68,16 @@ namespace PlanosLeitura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(292, 216);
             this.Controls.Add(this.lbl_Principal);
             this.Controls.Add(this.btn_Robert);
             this.Controls.Add(this.btn_Sequencial);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Principal";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planos de Leitura";
             this.ResumeLayout(false);
             this.PerformLayout();

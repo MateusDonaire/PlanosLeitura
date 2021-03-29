@@ -1,5 +1,4 @@
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Principal.resources
-C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Sequencial.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.csproj.GenerateResource.cache
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.AssemblyInfoInputs.cache
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.AssemblyInfo.cs
@@ -20,9 +19,10 @@ C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\bin\Debug\netcoreapp3.1\
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.csproj.CopyComplete
-C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Robert.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.csprojAssemblyReference.cache
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_ConsultarOuInerir_Sequencial.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_ConsultarOuInserir_Robert.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Sequencial_Consultar.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Robert_Consultar.resources
+C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Robert_Inserir.resources
+C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Sequencial_Inserir.resources

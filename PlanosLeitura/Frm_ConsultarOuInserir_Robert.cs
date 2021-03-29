@@ -25,7 +25,7 @@ namespace PlanosLeitura
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Robert robert = new Frm_Robert();
+            Frm_Robert_Inserir robert = new Frm_Robert_Inserir();
             robert.Show();
         }
 

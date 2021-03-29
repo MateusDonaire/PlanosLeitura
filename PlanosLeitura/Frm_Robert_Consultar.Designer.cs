@@ -62,6 +62,7 @@ namespace PlanosLeitura
             this.txt_Dia.Name = "txt_Dia";
             this.txt_Dia.Size = new System.Drawing.Size(65, 23);
             this.txt_Dia.TabIndex = 1;
+            this.txt_Dia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Dia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dia_KeyPress);
             // 
             // btn_Voltar
@@ -116,7 +117,7 @@ namespace PlanosLeitura
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 113);
+            this.label3.Location = new System.Drawing.Point(29, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 7;
@@ -125,7 +126,7 @@ namespace PlanosLeitura
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 159);
+            this.label4.Location = new System.Drawing.Point(10, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 8;
@@ -222,7 +223,11 @@ namespace PlanosLeitura
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.txt_Dia);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Robert_Consultar";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Leitura";
             this.ResumeLayout(false);
             this.PerformLayout();

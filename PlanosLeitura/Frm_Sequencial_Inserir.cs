@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace PlanosLeitura
 {
-    public partial class Frm_Sequencial : Form
+    public partial class Frm_Sequencial_Inserir : Form
     {
-        public Frm_Sequencial()
+        public Frm_Sequencial_Inserir()
         {
             InitializeComponent();
         }

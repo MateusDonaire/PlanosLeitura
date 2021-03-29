@@ -1,7 +1,7 @@
 ﻿
 namespace PlanosLeitura
 {
-    partial class Frm_Sequencial
+    partial class Frm_Sequencial_Inserir
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@ namespace PlanosLeitura
             // lbl_Dia
             // 
             this.lbl_Dia.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Dia.Location = new System.Drawing.Point(65, 83);
+            this.lbl_Dia.Location = new System.Drawing.Point(65, 81);
             this.lbl_Dia.Name = "lbl_Dia";
             this.lbl_Dia.Size = new System.Drawing.Size(100, 23);
             this.lbl_Dia.TabIndex = 0;
@@ -86,7 +86,7 @@ namespace PlanosLeitura
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 178);
+            this.label1.Location = new System.Drawing.Point(12, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 38);
             this.label1.TabIndex = 2;
@@ -114,7 +114,7 @@ namespace PlanosLeitura
             // lbl_Livro
             // 
             this.lbl_Livro.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Livro.Location = new System.Drawing.Point(51, 127);
+            this.lbl_Livro.Location = new System.Drawing.Point(51, 129);
             this.lbl_Livro.Name = "lbl_Livro";
             this.lbl_Livro.Size = new System.Drawing.Size(100, 38);
             this.lbl_Livro.TabIndex = 5;
@@ -199,7 +199,7 @@ namespace PlanosLeitura
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(80, 250);
+            this.btn_Salvar.Location = new System.Drawing.Point(86, 260);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(113, 39);
             this.btn_Salvar.TabIndex = 4;
@@ -217,7 +217,7 @@ namespace PlanosLeitura
             this.btn_UltimoCadastrado.UseVisualStyleBackColor = true;
             this.btn_UltimoCadastrado.Click += new System.EventHandler(this.btn_UltimoCadastrado_Click);
             // 
-            // Frm_Sequencial
+            // Frm_Sequencial_Inserir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,8 +233,12 @@ namespace PlanosLeitura
             this.Controls.Add(this.txb_Dia);
             this.Controls.Add(this.lbl_Dia);
             this.Controls.Add(this.btn_Voltar);
-            this.Name = "Frm_Sequencial";
-            this.Text = "SEQUENCIAL";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Frm_Sequencial_Inserir";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inserir no Banco de Dados";
             this.ResumeLayout(false);
             this.PerformLayout();
 

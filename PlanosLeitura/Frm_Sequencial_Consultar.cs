@@ -34,30 +34,31 @@ namespace PlanosLeitura
 
             try
             {
-                
-                    if (TemDiaRegistrado(dia))
+
+                if (TemDiaRegistrado(dia))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                    cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+
+                    conn.Open();
+
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+                        lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                        lbl_Capitulo.Text = reader["Capitulo"].ToString();
+                        lbl_Livro.Text = reader["Livro"].ToString();
 
-                        cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+                        FormatarNomeLivro(lbl_Livro.Text);
+                    }
 
-                        conn.Open();
+                    conn.Close();
+                    reader.Close();
 
-                        reader = cmd.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
-                            lbl_Capitulo.Text = reader["Capitulo"].ToString();
-                            lbl_Livro.Text = reader["Livro"].ToString();
-
-                            FormatarNomeLivro(lbl_Livro.Text);
-                        }
-
-                        conn.Close();
-                        reader.Close();
-
-                    } else MessageBox.Show("Dia " + dia + " não está cadastrado na base.");
+                }
+                else MessageBox.Show("Dia " + dia + " não está cadastrado na base.");
             }
             catch (SqlException ex)
             {
@@ -132,26 +133,28 @@ namespace PlanosLeitura
 
                 try
                 {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
 
-                        cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+                    cmd.Parameters.Add(new SqlParameter("@idDia", dia));
 
-                        conn.Open();
+                    conn.Open();
 
-                        reader = cmd.ExecuteReader();
+                    reader = cmd.ExecuteReader();
 
-                        while (reader.Read())
-                        {
-                            lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
-                            lbl_Capitulo.Text = reader["Capitulo"].ToString();
-                            lbl_Livro.Text = reader["Livro"].ToString();
+                    while (reader.Read())
+                    {
+                        lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                        lbl_Capitulo.Text = reader["Capitulo"].ToString();
+                        lbl_Livro.Text = reader["Livro"].ToString();
 
-                            FormatarNomeLivro(lbl_Livro.Text);
+                        FormatarNomeLivro(lbl_Livro.Text);
+
+                        txt_Dia.Text = "";
 
                     }
 
                     conn.Close();
-                        reader.Close();
+                    reader.Close();
 
                 }
                 catch (SqlException ex)
@@ -188,6 +191,8 @@ namespace PlanosLeitura
                         lbl_Livro.Text = reader["Livro"].ToString();
 
                         FormatarNomeLivro(lbl_Livro.Text);
+
+                        txt_Dia.Text = "";
                     }
 
                     conn.Close();

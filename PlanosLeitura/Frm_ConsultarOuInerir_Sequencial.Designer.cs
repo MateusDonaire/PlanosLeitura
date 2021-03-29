@@ -39,7 +39,7 @@ namespace PlanosLeitura
             // 
             this.lbl_Principal.AutoSize = true;
             this.lbl_Principal.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Principal.Location = new System.Drawing.Point(16, 68);
+            this.lbl_Principal.Location = new System.Drawing.Point(16, 71);
             this.lbl_Principal.Name = "lbl_Principal";
             this.lbl_Principal.Size = new System.Drawing.Size(373, 23);
             this.lbl_Principal.TabIndex = 5;
@@ -47,7 +47,7 @@ namespace PlanosLeitura
             // 
             // btn_Inserir
             // 
-            this.btn_Inserir.Location = new System.Drawing.Point(120, 177);
+            this.btn_Inserir.Location = new System.Drawing.Point(128, 182);
             this.btn_Inserir.Name = "btn_Inserir";
             this.btn_Inserir.Size = new System.Drawing.Size(155, 37);
             this.btn_Inserir.TabIndex = 4;
@@ -57,7 +57,7 @@ namespace PlanosLeitura
             // 
             // btn_Consultar
             // 
-            this.btn_Consultar.Location = new System.Drawing.Point(120, 134);
+            this.btn_Consultar.Location = new System.Drawing.Point(128, 139);
             this.btn_Consultar.Name = "btn_Consultar";
             this.btn_Consultar.Size = new System.Drawing.Size(155, 37);
             this.btn_Consultar.TabIndex = 3;
@@ -84,7 +84,11 @@ namespace PlanosLeitura
             this.Controls.Add(this.lbl_Principal);
             this.Controls.Add(this.btn_Inserir);
             this.Controls.Add(this.btn_Consultar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_ConsultarOuInerir_Sequencial";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SEQUENCIAL";
             this.ResumeLayout(false);
             this.PerformLayout();

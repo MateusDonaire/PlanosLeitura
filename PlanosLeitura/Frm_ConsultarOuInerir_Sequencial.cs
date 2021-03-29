@@ -11,14 +11,14 @@ namespace PlanosLeitura
     public partial class Frm_ConsultarOuInerir_Sequencial : Form
     {
         public Frm_ConsultarOuInerir_Sequencial()
-        {            
+        {
             InitializeComponent();
         }
 
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Sequencial sequencial = new Frm_Sequencial();
+            Frm_Sequencial_Inserir sequencial = new Frm_Sequencial_Inserir();
             sequencial.Show();
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace PlanosLeitura
 {
-    partial class Frm_Robert
+    partial class Frm_Robert_Inserir
     {
         /// <summary>
         /// Required designer variable.
@@ -418,7 +418,7 @@ namespace PlanosLeitura
             this.btn_UltimoCadastrado.UseVisualStyleBackColor = true;
             this.btn_UltimoCadastrado.Click += new System.EventHandler(this.btn_UltimoCadastrado_Click);
             // 
-            // Frm_Robert
+            // Frm_Robert_Inserir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -450,8 +450,12 @@ namespace PlanosLeitura
             this.Controls.Add(this.txb_Dia);
             this.Controls.Add(this.lbl_Dia);
             this.Controls.Add(this.btn_Voltar);
-            this.Name = "Frm_Robert";
-            this.Text = "ROBERT ROBERTS";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Frm_Robert_Inserir";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inserir no Banco de Dados";
             this.ResumeLayout(false);
             this.PerformLayout();
 

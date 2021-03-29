@@ -46,7 +46,7 @@ namespace PlanosLeitura
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 53);
+            this.label1.Location = new System.Drawing.Point(12, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 15);
             this.label1.TabIndex = 0;
@@ -54,10 +54,11 @@ namespace PlanosLeitura
             // 
             // txt_Dia
             // 
-            this.txt_Dia.Location = new System.Drawing.Point(99, 49);
+            this.txt_Dia.Location = new System.Drawing.Point(99, 54);
             this.txt_Dia.Name = "txt_Dia";
             this.txt_Dia.Size = new System.Drawing.Size(65, 23);
             this.txt_Dia.TabIndex = 1;
+            this.txt_Dia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_Dia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dia_KeyPress);
             // 
             // btn_Voltar
@@ -72,7 +73,7 @@ namespace PlanosLeitura
             // 
             // btn_Pesquisar
             // 
-            this.btn_Pesquisar.Location = new System.Drawing.Point(174, 49);
+            this.btn_Pesquisar.Location = new System.Drawing.Point(174, 54);
             this.btn_Pesquisar.Name = "btn_Pesquisar";
             this.btn_Pesquisar.Size = new System.Drawing.Size(75, 23);
             this.btn_Pesquisar.TabIndex = 3;
@@ -103,7 +104,7 @@ namespace PlanosLeitura
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 118);
+            this.label2.Location = new System.Drawing.Point(41, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 6;
@@ -112,7 +113,7 @@ namespace PlanosLeitura
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 163);
+            this.label3.Location = new System.Drawing.Point(32, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 7;
@@ -121,7 +122,7 @@ namespace PlanosLeitura
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 209);
+            this.label4.Location = new System.Drawing.Point(13, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 8;
@@ -131,7 +132,7 @@ namespace PlanosLeitura
             // 
             this.lbl_Dia.AutoSize = true;
             this.lbl_Dia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Dia.Location = new System.Drawing.Point(99, 113);
+            this.lbl_Dia.Location = new System.Drawing.Point(99, 118);
             this.lbl_Dia.Name = "lbl_Dia";
             this.lbl_Dia.Size = new System.Drawing.Size(45, 25);
             this.lbl_Dia.TabIndex = 9;
@@ -141,7 +142,7 @@ namespace PlanosLeitura
             // 
             this.lbl_Livro.AutoSize = true;
             this.lbl_Livro.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Livro.Location = new System.Drawing.Point(98, 160);
+            this.lbl_Livro.Location = new System.Drawing.Point(98, 163);
             this.lbl_Livro.Name = "lbl_Livro";
             this.lbl_Livro.Size = new System.Drawing.Size(57, 25);
             this.lbl_Livro.TabIndex = 10;
@@ -151,7 +152,7 @@ namespace PlanosLeitura
             // 
             this.lbl_Capitulo.AutoSize = true;
             this.lbl_Capitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Capitulo.Location = new System.Drawing.Point(98, 205);
+            this.lbl_Capitulo.Location = new System.Drawing.Point(98, 209);
             this.lbl_Capitulo.Name = "lbl_Capitulo";
             this.lbl_Capitulo.Size = new System.Drawing.Size(87, 25);
             this.lbl_Capitulo.TabIndex = 11;
@@ -174,7 +175,11 @@ namespace PlanosLeitura
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.txt_Dia);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Sequencial_Consultar";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Leitura";
             this.ResumeLayout(false);
             this.PerformLayout();

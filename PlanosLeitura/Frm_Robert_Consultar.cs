@@ -34,36 +34,37 @@ namespace PlanosLeitura
 
             try
             {
-                
-                    if (TemDiaRegistrado(dia))
+
+                if (TemDiaRegistrado(dia))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                    cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+
+                    conn.Open();
+
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia", conn);
+                        lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                        lbl_LivroA.Text = reader["LivroA"].ToString();
+                        lbl_CapituloA.Text = reader["CapituloA"].ToString();
+                        lbl_LivroB.Text = reader["LivroB"].ToString();
+                        lbl_CapituloB.Text = reader["CapituloB"].ToString();
+                        lbl_LivroC.Text = reader["LivroC"].ToString();
+                        lbl_CapituloC.Text = reader["CapituloC"].ToString();
 
-                        cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+                        FormatarNomeLivroA(lbl_LivroA.Text);
+                        FormatarNomeLivroB(lbl_LivroB.Text);
+                        FormatarNomeLivroC(lbl_LivroC.Text);
+                    }
 
-                        conn.Open();
+                    conn.Close();
+                    reader.Close();
 
-                        reader = cmd.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
-                            lbl_LivroA.Text = reader["LivroA"].ToString();
-                            lbl_CapituloA.Text = reader["CapituloA"].ToString();
-                            lbl_LivroB.Text = reader["LivroB"].ToString();
-                            lbl_CapituloB.Text = reader["CapituloB"].ToString();
-                            lbl_LivroC.Text = reader["LivroC"].ToString();
-                            lbl_CapituloC.Text = reader["CapituloC"].ToString();
-
-                            FormatarNomeLivroA(lbl_LivroA.Text);
-                            FormatarNomeLivroB(lbl_LivroB.Text);
-                            FormatarNomeLivroC(lbl_LivroC.Text);
-                        }
-
-                        conn.Close();
-                        reader.Close();
-
-                    } else MessageBox.Show("Dia " + dia + " não está cadastrado na base.");
+                }
+                else MessageBox.Show("Dia " + dia + " não está cadastrado na base.");
             }
             catch (SqlException ex)
             {
@@ -138,31 +139,33 @@ namespace PlanosLeitura
 
                 try
                 {
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura2 WHERE  ID_Dia_Leitura = @idDia", conn);
 
-                        cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+                    cmd.Parameters.Add(new SqlParameter("@idDia", dia));
 
-                        conn.Open();
+                    conn.Open();
 
-                        reader = cmd.ExecuteReader();
+                    reader = cmd.ExecuteReader();
 
-                        while (reader.Read())
-                        {
-                            lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
-                            lbl_LivroA.Text = reader["LivroA"].ToString();
-                            lbl_CapituloA.Text = reader["CapituloA"].ToString();
-                            lbl_LivroB.Text = reader["LivroB"].ToString();
-                            lbl_CapituloB.Text = reader["CapituloB"].ToString();
-                            lbl_LivroC.Text = reader["LivroC"].ToString();
-                            lbl_CapituloC.Text = reader["CapituloC"].ToString();
+                    while (reader.Read())
+                    {
+                        lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                        lbl_LivroA.Text = reader["LivroA"].ToString();
+                        lbl_CapituloA.Text = reader["CapituloA"].ToString();
+                        lbl_LivroB.Text = reader["LivroB"].ToString();
+                        lbl_CapituloB.Text = reader["CapituloB"].ToString();
+                        lbl_LivroC.Text = reader["LivroC"].ToString();
+                        lbl_CapituloC.Text = reader["CapituloC"].ToString();
 
-                            FormatarNomeLivroA(lbl_LivroA.Text);
-                            FormatarNomeLivroB(lbl_LivroB.Text);
-                            FormatarNomeLivroC(lbl_LivroC.Text);
+                        FormatarNomeLivroA(lbl_LivroA.Text);
+                        FormatarNomeLivroB(lbl_LivroB.Text);
+                        FormatarNomeLivroC(lbl_LivroC.Text);
+
+                        txt_Dia.Text = "";
                     }
 
-                        conn.Close();
-                        reader.Close();
+                    conn.Close();
+                    reader.Close();
 
                 }
                 catch (SqlException ex)
@@ -205,6 +208,8 @@ namespace PlanosLeitura
                         FormatarNomeLivroA(lbl_LivroA.Text);
                         FormatarNomeLivroB(lbl_LivroB.Text);
                         FormatarNomeLivroC(lbl_LivroC.Text);
+
+                        txt_Dia.Text = "";
                     }
 
                     conn.Close();

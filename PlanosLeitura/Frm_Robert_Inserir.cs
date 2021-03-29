@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace PlanosLeitura
 {
-    public partial class Frm_Robert : Form
+    public partial class Frm_Robert_Inserir : Form
     {
-        public Frm_Robert()
+        public Frm_Robert_Inserir()
         {
             InitializeComponent();
         }
@@ -129,8 +129,8 @@ namespace PlanosLeitura
 
             if (TemDiaRegistrado(idDia))
             {
-               podeSalvar = false;
-               MessageBox.Show("Dia " + idDia + " já está cadastrado na Base!");
+                podeSalvar = false;
+                MessageBox.Show("Dia " + idDia + " já está cadastrado na Base!");
             }
 
             SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
@@ -218,7 +218,7 @@ namespace PlanosLeitura
             }
 
         }
-    
+
 
         private void btn_UltimoCadastrado_Click(object sender, EventArgs e)
         {
