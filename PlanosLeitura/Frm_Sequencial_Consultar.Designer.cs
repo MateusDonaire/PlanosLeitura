@@ -88,6 +88,7 @@ namespace PlanosLeitura
             this.btn_Anterior.TabIndex = 4;
             this.btn_Anterior.Text = "Anterior";
             this.btn_Anterior.UseVisualStyleBackColor = true;
+            this.btn_Anterior.Click += new System.EventHandler(this.btn_Anterior_Click);
             // 
             // btn_Proximo
             // 
@@ -97,6 +98,7 @@ namespace PlanosLeitura
             this.btn_Proximo.TabIndex = 5;
             this.btn_Proximo.Text = "Próximo";
             this.btn_Proximo.UseVisualStyleBackColor = true;
+            this.btn_Proximo.Click += new System.EventHandler(this.btn_Proximo_Click);
             // 
             // label2
             // 

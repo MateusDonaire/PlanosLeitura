@@ -118,5 +118,81 @@ namespace PlanosLeitura
             }
             return false;
         }
+
+        private void btn_Proximo_Click(object sender, EventArgs e)
+        {
+            if (!lbl_Dia.Text.Equals("000"))
+            {
+                SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
+                SqlDataReader reader = null;
+                int dia = Convert.ToInt32(lbl_Dia.Text);
+                dia++;
+
+                try
+                {
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                        cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+
+                        conn.Open();
+
+                        reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                            lbl_Capitulo.Text = reader["Capitulo"].ToString();
+                            lbl_Livro.Text = reader["Livro"].ToString();
+                        }
+
+                        conn.Close();
+                        reader.Close();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("ERRO: " + ex);
+                }
+            }
+            else MessageBox.Show("Para saber qual o próximo dia é necessário realizar uma primeira consulta.");
+        }
+
+        private void btn_Anterior_Click(object sender, EventArgs e)
+        {
+            if (!lbl_Dia.Text.Equals("000"))
+            {
+                SqlConnection conn = new SqlConnection("Data Source=NOTEDONAIRE;Initial Catalog=PlanosLeitura;Persist Security Info=True;User ID=sa;Password=mdon11");
+                SqlDataReader reader = null;
+                int dia = Convert.ToInt32(lbl_Dia.Text);
+                dia--;
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Leitura1 WHERE  ID_Dia_Leitura = @idDia", conn);
+
+                    cmd.Parameters.Add(new SqlParameter("@idDia", dia));
+
+                    conn.Open();
+
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        lbl_Dia.Text = reader["ID_Dia_Leitura"].ToString();
+                        lbl_Capitulo.Text = reader["Capitulo"].ToString();
+                        lbl_Livro.Text = reader["Livro"].ToString();
+                    }
+
+                    conn.Close();
+                    reader.Close();
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("ERRO: " + ex);
+                }
+            }
+            else MessageBox.Show("Para saber qual o dia anterior é necessário realizar uma primeira consulta.");
+        }
     }
 }
