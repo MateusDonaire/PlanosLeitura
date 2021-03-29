@@ -15,11 +15,25 @@ namespace PlanosLeitura
             InitializeComponent();
         }
 
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_Principal principal = new Frm_Principal();
+            principal.Show();
+        }
+
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
             this.Hide();
             Frm_Robert robert = new Frm_Robert();
             robert.Show();
+        }
+
+        private void btn_Consultar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Frm_Robert_Consultar robert_Consultar = new Frm_Robert_Consultar();
+            robert_Consultar.Show();
         }
     }
 }

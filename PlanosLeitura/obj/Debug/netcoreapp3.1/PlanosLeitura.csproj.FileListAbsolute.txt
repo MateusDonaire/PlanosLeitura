@@ -25,3 +25,4 @@ C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_ConsultarOuInerir_Sequencial.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_ConsultarOuInserir_Robert.resources
 C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Sequencial_Consultar.resources
+C:\Users\donai\source\repos\PlanosLeitura\PlanosLeitura\obj\Debug\netcoreapp3.1\PlanosLeitura.Frm_Robert_Consultar.resources

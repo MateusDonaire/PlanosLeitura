@@ -32,6 +32,7 @@ namespace PlanosLeitura
             this.lbl_Principal = new System.Windows.Forms.Label();
             this.btn_Inserir = new System.Windows.Forms.Button();
             this.btn_Consultar = new System.Windows.Forms.Button();
+            this.btn_Voltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Principal
@@ -62,12 +63,24 @@ namespace PlanosLeitura
             this.btn_Consultar.TabIndex = 6;
             this.btn_Consultar.Text = "Consultar";
             this.btn_Consultar.UseVisualStyleBackColor = true;
+            this.btn_Consultar.Click += new System.EventHandler(this.btn_Consultar_Click);
+            // 
+            // btn_Voltar
+            // 
+            this.btn_Voltar.Location = new System.Drawing.Point(12, 12);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Voltar.TabIndex = 9;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // Frm_ConsultarOuInserir_Robert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 268);
+            this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.lbl_Principal);
             this.Controls.Add(this.btn_Inserir);
             this.Controls.Add(this.btn_Consultar);
@@ -83,5 +96,6 @@ namespace PlanosLeitura
         private System.Windows.Forms.Label lbl_Principal;
         private System.Windows.Forms.Button btn_Inserir;
         private System.Windows.Forms.Button btn_Consultar;
+        private System.Windows.Forms.Button btn_Voltar;
     }
 }
