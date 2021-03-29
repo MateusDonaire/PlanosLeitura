@@ -30,9 +30,9 @@ namespace PlanosLeitura
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Dia = new System.Windows.Forms.TextBox();
             this.btn_Voltar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
             this.btn_Anterior = new System.Windows.Forms.Button();
             this.btn_Proximo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,12 +52,12 @@ namespace PlanosLeitura
             this.label1.TabIndex = 0;
             this.label1.Text = "Consultar Dia:";
             // 
-            // textBox1
+            // txt_Dia
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 23);
-            this.textBox1.TabIndex = 1;
+            this.txt_Dia.Location = new System.Drawing.Point(99, 49);
+            this.txt_Dia.Name = "txt_Dia";
+            this.txt_Dia.Size = new System.Drawing.Size(65, 23);
+            this.txt_Dia.TabIndex = 1;
             // 
             // btn_Voltar
             // 
@@ -68,14 +68,15 @@ namespace PlanosLeitura
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_Pesquisar
             // 
-            this.button2.Location = new System.Drawing.Point(174, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Pesquisar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Location = new System.Drawing.Point(174, 49);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Pesquisar.TabIndex = 3;
+            this.btn_Pesquisar.Text = "Pesquisar";
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Click += new System.EventHandler(this.btn_Pesquisar_Click);
             // 
             // btn_Anterior
             // 
@@ -165,9 +166,9 @@ namespace PlanosLeitura
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Proximo);
             this.Controls.Add(this.btn_Anterior);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_Pesquisar);
             this.Controls.Add(this.btn_Voltar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_Dia);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Sequencial_Consultar";
             this.Text = "Consultar Leitura";
@@ -179,9 +180,9 @@ namespace PlanosLeitura
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Dia;
         private System.Windows.Forms.Button btn_Voltar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Pesquisar;
         private System.Windows.Forms.Button btn_Anterior;
         private System.Windows.Forms.Button btn_Proximo;
         private System.Windows.Forms.Label label2;
